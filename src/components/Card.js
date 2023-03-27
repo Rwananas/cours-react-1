@@ -1,13 +1,19 @@
-import React from 'react';
+import React from "react";
 
-const Card = () => {
-    return (
-        <li className='card'>
-            <div className="infos">
-                <h2>Nom du pays</h2>
-            </div>
-        </li>
-    );
+const Card = ({ country }) => {
+  return (
+    <li className="card">
+      <img
+        src={country.flags.svg}
+        alt={"drapeau " + country.translations.fra.common}
+      />
+      <div className="infos">
+        <h2> {country.translations.fra.common} </h2>
+        <h4> {country.capital} </h4>
+        <p>Pop. {country.population.toLocaleString()} </p>
+      </div>
+    </li>
+  );
 };
 
 export default Card;
